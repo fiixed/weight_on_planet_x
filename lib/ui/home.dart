@@ -37,7 +37,7 @@ class HomeState extends State {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Your Weight on Earth',
-                        hintText: 'In Pounds',
+                        hintText: 'In Pounds!',
                         icon: Icon(Icons.person_outline),
                       ),
                     ),
