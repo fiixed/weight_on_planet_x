@@ -8,6 +8,15 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State {
+  int radioValue = 0;
+
+  void handleRadioValueChanged(int value) {
+    setState(() {
+      radioValue = value;
+      print(radioValue);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,6 +49,47 @@ class HomeState extends State {
                         hintText: 'In Pounds!',
                         icon: Icon(Icons.person_outline),
                       ),
+                    ),
+                    Padding(padding: EdgeInsets.all(5.0)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Radio<int>(
+                            activeColor: Colors.brown,
+                            value: 0,
+                            groupValue: radioValue,
+                            onChanged: handleRadioValueChanged),
+                        Text(
+                          'Pluto',
+                          style: TextStyle(color: Colors.white30),
+                        ),
+                        Radio<int>(
+                            activeColor: Colors.red,
+                            value: 1,
+                            groupValue: radioValue,
+                            onChanged: handleRadioValueChanged),
+                        Text(
+                          'Mars',
+                          style: TextStyle(color: Colors.white30),
+                        ),
+                        Radio<int>(
+                            activeColor: Colors.orangeAccent,
+                            value: 2,
+                            groupValue: radioValue,
+                            onChanged: handleRadioValueChanged),
+                        Text(
+                          'Venus',
+                          style: TextStyle(color: Colors.white30),
+                        ),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.all(15.6)),
+                    Text(
+                      'Hello There',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 19.4,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
